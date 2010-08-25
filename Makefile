@@ -6,15 +6,15 @@ OBJCOPY = $(CROSS_COMPILE)objcopy
 OBJCFLAGS += --gap-fill=0xff
 RM	= rm -f
 
-ALL = zt-load.bin
+ALL = start.bin
 
 all: $(ALL)
 
-zt-load.bin:	zt-load.elf
+start.bin:	start.elf
 	$(OBJCOPY) ${OBJCFLAGS} -O binary $< $@
 
-zt-load.elf:	start.o
-	$(LD) -T test.ld -o $@ $< 
+start.elf:	start.o
+	$(LD) -T linkscript.ld -o $@ $< 
 
 start.o:	start.S test.fs
 	$(AS) -o start.o start.S

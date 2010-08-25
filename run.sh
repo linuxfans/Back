@@ -1,0 +1,1 @@
+qemu-system-arm  -kernel start.bin -M versatilepb -nographic

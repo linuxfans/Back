@@ -1,3 +1,4 @@
+
 @filename: start.S
 	.text
 	.align 4
@@ -12,7 +13,7 @@ _start:
 	
 	.text
 FORTH_FILE:
-	.incbin "test.fs"	
+	.incbin "test.fs"	@测试用
 	.word	0x0
 	.align 4
 	.text
