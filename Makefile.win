@@ -1,4 +1,4 @@
-CROSS_COMPILE = .\tools\win\arm-none-eabi-
+CROSS_COMPILE = .\\tools\\windows\\arm-none-eabi-
 
 AS	= $(CROSS_COMPILE)as
 LD	= $(CROSS_COMPILE)ld
