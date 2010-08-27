@@ -1,10 +1,10 @@
-#CROSS_COMPILE = arm-none-eabi-
-CROSS_COMPILE = ./tools/linux/arm-none-linux-gnueabi-
+CROSS_COMPILE = .\tools\win\arm-none-eabi-
+
 AS	= $(CROSS_COMPILE)as
 LD	= $(CROSS_COMPILE)ld
 OBJCOPY = $(CROSS_COMPILE)objcopy
 OBJCFLAGS += --gap-fill=0xff
-RM	= rm -f
+RM	= del /a /f
 
 ALL = start.bin
 

@@ -1,0 +1,15 @@
+1 Windows下
+将Makefile.win复制为Makefile
+make
+run.bat
+Ctrl+Alt+3可看到qemu串口的输出：
+Hello World
+HHello World
+
+2 ubuntu下
+将Makefile.linux复制为Makefile
+make
+./run.sh
+可直接看到qemu串口的输出：
+Hello World
+HHello World

@@ -1,4 +1,3 @@
-
 @filename: start.S
 	.text
 	.align 4
@@ -286,15 +285,32 @@ _CREATE:
 	NEXT
 
 	@@ 
+	defcode "C@",2,,CFETCH
+	ldrb	top, [top]
+	NEXT
+
+	@@ 
 	defcode "+",1,,PLUS
 	POP	r0
 	add	top, top , r0
+	NEXT
+	
+	@@ 
+	defcode "-",1,,MINUS
+	POP	r0
+	sub	top, r0 , top
 	NEXT
 
 	@@ 
 	defcode "AND",3,,AND
 	POP	r0
 	and	top, top , r0
+	NEXT
+	
+	@@ 
+	defcode "LSR",3,,LSR
+	POP	r0
+	mov	top, r0, LSR top
 	NEXT
 	
 	
@@ -393,6 +409,16 @@ _FIND:
 3:
 	mov	top, #0
 	NEXT
+	
+	defcode "IMMEDIATE",9,F_IMMED,IMMEDIATE
+	ldr	r0, =var_LATEST
+	ldr	r0, [r0]
+	add	r0, r0, #4
+	ldr	r1, [r0]
+	orr	r1, r1, #F_IMMED
+	str	r1, [r0]
+	NEXT
+	
 
 	defcode "DROP",4,,DROP
 	POP	top

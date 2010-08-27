@@ -24,7 +24,7 @@
 ;
 
 : 测试
-    0x48 0x101F1000 !        
+    0x48 0x101F1000 !    
     [ hello-world ]
     hello-world     
 ;
